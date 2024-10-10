@@ -27,76 +27,75 @@ function Register() {
     if (!user.firstName) {
       alert("Ism maydoni to'ldirilmagan.");
       fnameRef.current.focus();
-      fnameRef.current.style.border = "1px solid red"; // Qizil chegara
+      fnameRef.current.style.border = "1px solid red"; 
       return;
     }
-    fnameRef.current.style.border = ""; // Chegarani tiklash
+    fnameRef.current.style.border = ""; 
 
     if (!user.lastName) {
       alert("Familiya maydoni to'ldirilmagan.");
       lnameRef.current.focus();
-      lnameRef.current.style.border = "1px solid red"; // Qizil chegara
+      lnameRef.current.style.border = "1px solid red"; 
       return;
     }
-    lnameRef.current.style.border = ""; // Chegarani tiklash
+    lnameRef.current.style.border = ""; 
 
     if (!user.age) {
       alert("Yosh maydoni to'ldirilmagan.");
       ageRef.current.focus();
-      ageRef.current.style.border = "1px solid red"; // Qizil chegara
+      ageRef.current.style.border = "1px solid red"; 
       return;
     }
-    ageRef.current.style.border = ""; // Chegarani tiklash
+    ageRef.current.style.border = ""; 
 
     if (!user.email) {
       alert("Email maydoni to'ldirilmagan.");
       emailRef.current.focus();
-      emailRef.current.style.border = "1px solid red"; // Qizil chegara
+      emailRef.current.style.border = "1px solid red"; 
       return;
     }
-    emailRef.current.style.border = ""; // Chegarani tiklash
+    emailRef.current.style.border = ""; 
 
     if (!user.password) {
       alert("Parol maydoni to'ldirilmagan.");
       passwordRef.current.focus();
-      passwordRef.current.style.border = "1px solid red"; // Qizil chegara
+      passwordRef.current.style.border = "1px solid red"; 
       return;
     }
-    passwordRef.current.style.border = ""; // Chegarani tiklash
+    passwordRef.current.style.border = ""; 
 
     if (!user.confirmPassword) {
       alert("Parolni tasdiqlash maydoni to'ldirilmagan.");
       repasswordRef.current.focus();
-      repasswordRef.current.style.border = "1px solid red"; // Qizil chegara
+      repasswordRef.current.style.border = "1px solid red"; 
       return;
     }
-    repasswordRef.current.style.border = ""; // Chegarani tiklash
+    repasswordRef.current.style.border = ""; 
 
     if (user.password.length < 4) {
       alert("Parol kamida 4 ta belgidan iborat bo'lishi kerak.");
       passwordRef.current.focus();
-      passwordRef.current.style.border = "1px solid red"; // Qizil chegara
+      passwordRef.current.style.border = "1px solid red"; 
       return;
     }
-    passwordRef.current.style.border = ""; // Chegarani tiklash
-
+    passwordRef.current.style.border = ""; 
     if (!/[a-zA-Z]/.test(user.password)) {
       alert("Parolda hech bo'lmasa bitta harf bo'lishi kerak.");
       passwordRef.current.focus();
-      passwordRef.current.style.border = "1px solid red"; // Qizil chegara
+      passwordRef.current.style.border = "1px solid red"; 
       return;
     }
-    passwordRef.current.style.border = ""; // Chegarani tiklash
+    passwordRef.current.style.border = ""; 
 
     if (user.password !== user.confirmPassword) {
       alert("Parol va tasdiqlangan parol mos kelmaydi.");
       repasswordRef.current.focus();
-      repasswordRef.current.style.border = "1px solid red"; // Qizil chegara
+      repasswordRef.current.style.border = "1px solid red"; 
       return;
     }
-    repasswordRef.current.style.border = ""; // Chegarani tiklash
+    repasswordRef.current.style.border = ""; 
 
-    // Foydalanuvchini ro'yxatdan o'tkazish
+  
     api
       .post("/register", user, {
         headers: {
